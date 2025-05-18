@@ -10,4 +10,18 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\Dtos\" />
+    <Folder Include="Application\Services\" />
+    <Folder Include="Application\Validators\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Core\Entities\" />
+    <Folder Include="Core\Enums\" />
+    <Folder Include="Core\Interfaces\" />
+    <Folder Include="Core\Common\" />
+    <Folder Include="Infrastructure\Data\" />
+    <Folder Include="Infrastructure\External Services\" />
+    <Folder Include="Infrastructure\Repository\" />
+  </ItemGroup>
+
 </Project>
