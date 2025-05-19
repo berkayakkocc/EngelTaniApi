@@ -1,13 +1,11 @@
-﻿using EngelTaniApi.Application.Dtos;
+﻿using Core.Interfaces;
+using EngelTaniApi.Application.Dtos;
+using EngelTaniApi.Core.Entities;
 
 namespace EngelTaniApi.Core.Interfaces
 {
-    public interface IExerciseService
+    public interface IExerciseService : IBaseGenericService<Exercise, ExerciseDto>
     {
-        Task<List<ExerciseDto>> GetAllAsync();
-        Task<ExerciseDto?> GetByIdAsync(int id);
-        Task<int> CreateAsync(ExerciseDto dto);
-        Task<bool> UpdateAsync(int id, ExerciseDto dto);
-        Task<bool> DeleteAsync(int id);
+        
     }
 }

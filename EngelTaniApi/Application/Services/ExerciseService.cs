@@ -1,39 +1,43 @@
 ﻿using EngelTaniApi.Application.Dtos;
+using EngelTaniApi.Core.Entities;
 using EngelTaniApi.Core.Interfaces;
+using EngelTaniApi.Infrastructure.Data;
 
-namespace EngelTaniApi.Application.Services
+namespace Application.Services
 {
-    public class ExerciseService : IExerciseService
+    public class ExerciseService : BaseGenericService<Exercise, ExerciseDto>, IExerciseService
     {
-
-       
-
-        public Task<List<ExerciseDto>> GetAllAsync()
+        public ExerciseService(EngelTaniDbContext context) : base(context)
         {
-            throw new NotImplementedException();
         }
 
-        public Task<ExerciseDto?> GetByIdAsync(int id)
+        protected override ExerciseDto MapToDto(Exercise entity)
         {
-            throw new NotImplementedException();
+            return new ExerciseDto
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Description = entity.Description,
+                DurationInMinutes = entity.DurationInMinutes
+            };
         }
 
-        public Task<int> CreateAsync(ExerciseDto dto)
+        protected override Exercise MapToEntity(ExerciseDto dto)
         {
-            throw new NotImplementedException();
+            return new Exercise
+            {
+                Id = dto.Id,
+                Name = dto.Name,
+                Description = dto.Description,
+                DurationInMinutes = dto.DurationInMinutes
+            };
         }
 
-        public Task<bool> UpdateAsync(int id, ExerciseDto dto)
+        protected override void UpdateEntity(Exercise entity, ExerciseDto dto)
         {
-            throw new NotImplementedException();
+            entity.Name = dto.Name;
+            entity.Description = dto.Description;
+            entity.DurationInMinutes = dto.DurationInMinutes;
         }
-
-        public Task<bool> DeleteAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-      
     }
-    
 }

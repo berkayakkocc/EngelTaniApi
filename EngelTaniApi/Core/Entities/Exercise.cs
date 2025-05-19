@@ -1,4 +1,5 @@
-﻿using EngelTaniApi.Core.Common;
+﻿using EngelTaniApi.Application.Dtos;
+using EngelTaniApi.Core.Common;
 
 namespace EngelTaniApi.Core.Entities
 {
